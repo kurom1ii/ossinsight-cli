@@ -14,18 +14,18 @@ You have access to the `ossinsight` CLI tool that queries OSSInsight's database 
 The CLI lives inside this plugin directory. On first use, install dependencies:
 
 ```bash
-cd ${CLAUDE_SKILL_DIR}/.. && npm install --silent 2>/dev/null && npx tsc 2>/dev/null
+cd ${CLAUDE_SKILL_DIR}/../.. && npm install --silent 2>/dev/null && npx tsc 2>/dev/null
 ```
 
 ## How to Run
 
 ```bash
-cd ${CLAUDE_SKILL_DIR}/.. && node dist/index.js <command> [args] [options]
+cd ${CLAUDE_SKILL_DIR}/../.. && node dist/index.js <command> [args] [options]
 ```
 
 If `dist/` doesn't exist yet, build first:
 ```bash
-cd ${CLAUDE_SKILL_DIR}/.. && npm install --silent 2>/dev/null && npx tsc && node dist/index.js <command> [args] [options]
+cd ${CLAUDE_SKILL_DIR}/../.. && npm install --silent 2>/dev/null && npx tsc && node dist/index.js <command> [args] [options]
 ```
 
 ## Available Commands
@@ -100,7 +100,7 @@ The user asked: `$ARGUMENTS`
 
 Run the appropriate command based on what the user wants. If the request is ambiguous, choose the most relevant command. If the user asks a complex analytical question that doesn't map to a specific command, use the `ask` command.
 
-Always `cd ${CLAUDE_SKILL_DIR}/..` before running commands.
+Always `cd ${CLAUDE_SKILL_DIR}/../..` before running commands.
 
 After getting the results, analyze the data and provide insights:
 - Highlight key findings and patterns

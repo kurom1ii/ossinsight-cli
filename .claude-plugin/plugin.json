@@ -1,0 +1,21 @@
+{
+  "name": "ossinsight",
+  "version": "1.0.0",
+  "description": "Open source intelligence powered by OSSInsight API (6B+ GitHub events). Trending repos, repo analysis, compare, rankings, star demographics, contributor stats, and AI-powered questions.",
+  "author": {
+    "name": "Thai Hoang",
+    "url": "https://github.com/kurom1ii"
+  },
+  "repository": "https://github.com/kurom1ii/ossinsight-cli",
+  "license": "MIT",
+  "keywords": [
+    "ossinsight",
+    "github",
+    "open-source",
+    "analytics",
+    "trending",
+    "stars",
+    "contributors",
+    "llm"
+  ]
+}

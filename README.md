@@ -1,6 +1,6 @@
 # ossinsight-cli
 
-CLI tool + Claude Code skill for querying [OSSInsight](https://ossinsight.io) — open source intelligence powered by 6B+ GitHub events via TiDB Cloud.
+Claude Code plugin + standalone CLI for querying [OSSInsight](https://ossinsight.io) — open source intelligence powered by 6B+ GitHub events via TiDB Cloud.
 
 All output is formatted as plain text tables, optimized for LLM consumption and analysis.
 
@@ -17,23 +17,26 @@ All output is formatted as plain text tables, optimized for LLM consumption and 
 | `contributors` | Contributor analysis (PR authors, issue reporters) |
 | `ask` | Natural language questions (AI-powered SQL) |
 
-## Install
+## Install as Claude Code Plugin
 
-```bash
-git clone https://github.com/YOUR_USERNAME/ossinsight-cli.git
-cd ossinsight-cli
-chmod +x install.sh
-./install.sh
+### Option 1: Add as marketplace (recommended)
+
+Inside Claude Code, run:
+
+```
+/plugin marketplace add kurom1ii/ossinsight-cli
+/plugin install ossinsight@ossinsight-cli
 ```
 
-This will:
-1. Install npm dependencies
-2. Build TypeScript
-3. Symlink the skill into `~/.claude/skills/ossinsight`
+Then use with `/ossinsight <your query>`.
 
-## Usage
+### Option 2: Install directly
 
-### As Claude Code Skill
+```
+/install-plugin https://github.com/kurom1ii/ossinsight-cli
+```
+
+## Usage in Claude Code
 
 ```
 /ossinsight trending Python repos this week
@@ -42,32 +45,36 @@ This will:
 /ossinsight what are the fastest growing Rust projects?
 ```
 
-### As Standalone CLI
+## Standalone CLI Usage
 
 ```bash
+git clone https://github.com/kurom1ii/ossinsight-cli
+cd ossinsight-cli
+npm install && npx tsc
+
 # Trending repos
-npx tsx src/index.ts trending -l Python -p past_week
+node dist/index.js trending -l Python -p past_week
 
 # Full repo analysis
-npx tsx src/index.ts repo facebook/react
+node dist/index.js repo facebook/react
 
 # Compare repos
-npx tsx src/index.ts compare facebook/react vuejs/vue
+node dist/index.js compare facebook/react vuejs/vue
 
 # Browse collections
-npx tsx src/index.ts collections -s "AI"
+node dist/index.js collections -s "AI"
 
 # Collection ranking
-npx tsx src/index.ts ranking 2 -m stars
+node dist/index.js ranking 2 -m stars
 
 # Star analysis
-npx tsx src/index.ts stars torvalds/linux -t countries
+node dist/index.js stars torvalds/linux -t countries
 
 # Contributor analysis
-npx tsx src/index.ts contributors kubernetes/kubernetes -t prs
+node dist/index.js contributors kubernetes/kubernetes -t prs
 
 # AI-powered question
-npx tsx src/index.ts ask "Which repos got the most stars in 2024?"
+node dist/index.js ask "Which repos got the most stars in 2024?"
 ```
 
 ## Output Format

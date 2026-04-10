@@ -1,0 +1,17 @@
+{
+  "name": "ossinsight-cli",
+  "description": "Open source intelligence powered by OSSInsight API (6B+ GitHub events)",
+  "owner": {
+    "name": "Thai Hoang",
+    "url": "https://github.com/kurom1ii"
+  },
+  "plugins": [
+    {
+      "name": "ossinsight",
+      "source": "./",
+      "description": "Query OSSInsight for trending repos, repo analysis, comparisons, rankings, star demographics, contributor stats, and AI-powered GitHub questions.",
+      "version": "1.0.0",
+      "category": "development"
+    }
+  ]
+}

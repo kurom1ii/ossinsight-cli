@@ -8,17 +8,18 @@
   },
   "scripts": {
     "build": "tsc",
+    "prepare": "tsc",
     "dev": "tsx src/index.ts",
     "start": "node dist/index.js"
   },
-  "keywords": ["ossinsight", "github", "open-source", "analytics", "cli", "llm", "claude-code"],
+  "keywords": ["ossinsight", "github", "open-source", "analytics", "cli", "llm", "claude-code", "openclaw", "agent-skill", "skill"],
   "license": "MIT",
   "dependencies": {
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/node": "^22.15.1",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "tsx": "^4.19.4"
   }
 }

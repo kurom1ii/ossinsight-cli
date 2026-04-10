@@ -1,6 +1,8 @@
 # ossinsight-cli
 
-Claude Code plugin + standalone CLI for querying [OSSInsight](https://ossinsight.io) — open source intelligence powered by 6B+ GitHub events via TiDB Cloud.
+Open source intelligence CLI + agent skill for [OSSInsight](https://ossinsight.io) — powered by 6B+ GitHub events via TiDB Cloud.
+
+Works with **Claude Code**, **OpenClaw**, **Codex**, **Cursor**, **Gemini CLI**, and [40+ agents](https://github.com/vercel-labs/skills#supported-agents).
 
 All output is formatted as plain text tables, optimized for LLM consumption and analysis.
 
@@ -17,26 +19,28 @@ All output is formatted as plain text tables, optimized for LLM consumption and 
 | `contributors` | Contributor analysis (PR authors, issue reporters) |
 | `ask` | Natural language questions (AI-powered SQL) |
 
+## Install as Agent Skill (npx skills)
+
+```bash
+npx skills add kurom1ii/ossinsight-cli
+```
+
+This works with OpenClaw, Claude Code, Codex, Cursor, and all SKILL.md-compatible agents.
+
 ## Install as Claude Code Plugin
-
-### Option 1: Add as marketplace (recommended)
-
-Inside Claude Code, run:
 
 ```
 /plugin marketplace add kurom1ii/ossinsight-cli
 /plugin install ossinsight@ossinsight-cli
 ```
 
-Then use with `/ossinsight <your query>`.
+## Install as Global CLI
 
-### Option 2: Install directly
-
-```
-/install-plugin https://github.com/kurom1ii/ossinsight-cli
+```bash
+npm install -g github:kurom1ii/ossinsight-cli
 ```
 
-## Usage in Claude Code
+## Usage in Claude Code / OpenClaw
 
 ```
 /ossinsight trending Python repos this week
